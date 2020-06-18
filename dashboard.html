@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+</head>
+<body class="bg-light">
+    <div class="container-fluid">
+        <div class="row m-2 p-2">
+            <div class="col col-10">
+                <h1 class="text-center display-4 pl-5 h1 font-weight-bold"><b>Manage your expenses</b></h1>
+            </div>
+            <div class="col col-2 text-right">
+                <button onclick="logout()" class="m-auto btn btn-outline-danger">LOGOUT</button>
+            </div>
+        </div>
+        <div class="m-4 mt-5 p-3 bg-dark" id="inpdata">
+            <form class="my-5 mx-3">
+                <div class="form-row h2">
+                    <div class="form-group font-weight-bold col-md-3 text-center text-white">
+                    <label>Date</label>
+                    <input type="date" class="form-control" id="date" required>
+                    </div>
+                    <div class="form-group col-md-3 font-weight-bold text-center text-white">
+                    <label>Category</label>
+                    <select id="category" class="form-control">
+                        <option selected>Choose...</option>
+                        <option>Food</option>
+                        <option>Rent</option>
+                        <option>Transportation</option>
+                        <option>Taxes</option>
+                        <option>Healthcare</option>
+                        <option>Personal Care</option>
+                        <option>Pets</option>
+                        <option>Gifts</option>
+                        <option>Salary</option>
+                        <option>Bonus</option>
+                    </select>
+                    </div>
+                    <div class="form-group font-weight-bold col-md-3 text-center text-white">
+                    <label>Income</label>
+                    <input type="text" class="form-control" id="income" value="0">
+                    </div>
+                    <div class="form-group font-weight-bold col-md-3 text-center text-white">
+                        <label>Expense</label>
+                        <input type="text" class="form-control" id="expense" value="0">
+                    </div>
+                </div>
+                <div class="text-center">
+                    <button type="submit" onclick="process()" class="btn btn-success btn-lg">Enter</button>
+                </div>
+            </form>
+        </div>
+        <div class="m-4 p-3" id="btndiv">
+            <button onclick="showTable()" class="m-auto btn btn-primary btn-lg">Show Table</button>
+            <button onclick="showReport()" class="m-auto btn btn-primary btn-lg">Show Report</button>
+            <button onclick="showInput()" class="m-auto btn btn-primary btn-lg">Enter data</button>
+        </div>
+        <div id="displayTab" class="m-auto p-auto">
+            <table class="table table-dark">
+                <thead>
+                <tr>
+                    <th scope="col">Date</th>
+                    <th scope="col">Category</th>
+                    <th scope="col">Income</th>
+                    <th scope="col">Expense</th>
+                </tr>
+                </thead>
+                <tbody>
+
+                </tbody>
+            </table>
+        </div>
+
+        <div id="reportdisp" class="m-auto p-auto">
+            <table class="table table-dark">
+                <thead>
+                <tr>
+                    <th scope="col">Total Income</th>
+                    <th scope="col">Total Expenses</th>
+                    <th scope="col">Savings</th>
+                </tr>
+                </thead>
+                <tbody id="reportBody">
+
+                </tbody>
+            </table>
+        </div>
+
+    </div>
+    <script type="text/javascript" src="script.js"></script>
+</body>
+</html>
